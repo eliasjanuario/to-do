@@ -1,0 +1,30 @@
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto 0;
+    width: 46rem;
+}
+
+.listContainer header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 1.5rem;
+    border-bottom: 0.1rem solid var(--gray-400);
+}
+
+.listContainer header div {
+    display: flex;
+    align-items: center;
+}
+
+.listContainer header div p {
+    margin-right: 0.3rem;
+}
+
+.listContainer section div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
