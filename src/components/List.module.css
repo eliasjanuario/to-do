@@ -22,9 +22,42 @@
     margin-right: 0.3rem;
 }
 
-.listContainer section div {
+.listContainer section .taskDisclaimer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5rem;
+}
+
+.listContainer section .checkboxContainer {
+    margin-top: 1rem;
+    display: flex;
+    padding: 1.5rem;
+    border: 0.1rem solid gray;
+    border-radius: 0.5rem;
+    align-items: flex-start;
+    overflow-wrap: anywhere;
+}
+
+.listContainer section .checkboxContainer input {
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;
+}
+
+.listContainer section .checkboxContainer p {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+
+.listContainer section .checkboxContainer svg {
+    margin-top: 0.2rem;
+    cursor: pointer;
+}
+
+.listContainer section .checkboxContainer svg:hover {
+    color: var(--red-500)
+}
+
+.taskDone {
+    text-decoration: line-through;
 }
