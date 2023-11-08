@@ -9,20 +9,22 @@ interface ListProps {
     tasks: Tasks[];
     handleDeletetask: (taskId: string) => void;
     handleTaskChange: (event: ChangeEvent<HTMLInputElement>, taskId: string) => void;
+    taskToDoCounter: number;
+    taskDoneCounter: number;
 }
 
-export function List({ tasks, handleDeletetask, handleTaskChange }: ListProps) {
+export function List({ tasks, handleDeletetask, handleTaskChange, taskToDoCounter, taskDoneCounter }: ListProps) {
 
     return (
         <div className={styles.listContainer}>
             <header>
                 <div>
                     <p>Tarefas criadas</p>
-                    <span>0</span>
+                    <span>{taskToDoCounter}</span>
                 </div>
                 <div>
                     <p>Concluídas</p>
-                    <span>0</span>
+                    <span>{`${taskDoneCounter} de ${taskToDoCounter}`}</span>
                 </div>
             </header>
 

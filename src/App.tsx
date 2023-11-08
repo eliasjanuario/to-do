@@ -15,9 +15,12 @@ export interface Tasks {
 
 function App() {
 	const [tasks, setTasks] = useState<Tasks[]>([])
+	const [taskToDoCounter, setTaskToDoCounter] = useState<number>(0)
+	const [taskDoneCounter, setTaskDoneCounter] = useState<number>(0)
 
 	function handleNewTask(task: string) {
 		setTasks([...tasks, { id: uuid(), checked: false, description: task}])
+		setTaskToDoCounter(taskToDoCounter + 1)
 	}
 
 	function handleTaskChange(event: ChangeEvent<HTMLInputElement>, taskId: string) {
@@ -27,9 +30,16 @@ function App() {
 
 		if (taskToUpdate) {
 			taskToUpdate.checked = event.target.checked;
+
+			if (event.target.checked) {
+				setTaskDoneCounter(taskDoneCounter + 1)
+			} else {
+				setTaskDoneCounter(taskDoneCounter - 1)
+			}
+
 			setTasks(updatedTasks);
 		}
-		
+
 	}
 
 	function handleDeletetask(taskId: string) {
@@ -47,6 +57,8 @@ function App() {
 				tasks={tasks} 
 				handleDeletetask={handleDeletetask} 
 				handleTaskChange={handleTaskChange}
+				taskToDoCounter={taskToDoCounter}
+				taskDoneCounter={taskDoneCounter}
 			/>
 		</div>
 	)
